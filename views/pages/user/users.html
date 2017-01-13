@@ -1,0 +1,109 @@
+<!doctype html>
+<html ng-app="app">
+
+<head>
+    <% include ../../partials/header %>
+    <script src="/js/customer/users.js"></script>
+</head>
+
+<body data-layout="fixed">
+
+<% include ../../partials/navbar %>
+
+<div class="container-fluid nav-hidden" id="content">
+    <% include ../../partials/left %>
+    <div id="main">
+        <div class="container-fluid">
+            <div class="page-header">
+                <div class="pull-left">
+                    <h1>USER</h1>
+                </div>
+                <div class="pull-right">
+                    <ul class="stats">
+                        <li class='satgreen'>
+                            <i class="fa fa-calendar"></i>
+                            <div class="details">
+                                <span class="big">February 22, 2013</span>
+                                <span>Wednesday, 13:56</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="breadcrumbs">
+                <!---->
+                <div class="close-bread">
+                    <a href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row" ng-controller="getItems">
+
+                <div class="col-sm-12">
+                    <div class="box box-color box-bordered">
+                        <div class="box-title">
+                            <h3>
+                                <i class="fa fa-table"></i>
+                                用户列表
+                            </h3>
+                        </div>
+                        <div class="box-content nopadding">
+                            <table class="table table-hover table-nomargin">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th class='hidden-350'>User Name</th>
+                                    <th class='hidden-480'>level</th>
+                                    <th class='hidden-480'>Create Time</th>
+                                    <th class='hidden-480'>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr ng-repeat="item in items | filter:query">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.level}}</td>
+                                    <td>{{item.createTime}}</td>
+                                    <td>
+                                        <a class="btn btn-primary btn--icon btn-mini" ng-click="getToken($event)"
+                                           data="{{item.id}}">
+                                            <i class="fa fa-edit"></i> Token
+                                        </a>
+                                        <a class="btn btn-primary btn--icon btn-mini" ng-click="refreshToken($event)"
+                                           data="{{item.id}}">
+                                            <i class="fa fa-cloud"></i> Refresh
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                            <div class="table-pagination">
+                                <a class="btn first" ng-click="page(0)">First</a>
+                                <a class="btn prev" ng-click="page(current_page-1)">Previous</a>
+                                <a class="btn next" ng-click="page(current_page+1)">Next</a>
+                                <a class="btn last" ng-click="page(count_page-1)">Last</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div><!-- row end  -->
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".main-nav > li:eq(1)").addClass("active");
+    });
+
+</script>
+
+</body>
+
+</html>

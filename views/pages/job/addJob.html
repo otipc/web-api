@@ -1,0 +1,291 @@
+<!doctype html>
+<html ng-app="app">
+
+<head>
+    <% include ../../partials/header %>
+    <script src="/js/customer/addjob.js"></script>
+</head>
+
+<body data-layout="fixed">
+
+<% include ../../partials/navbar %>
+
+<div class="container-fluid nav-hidden" id="content">
+    <% include ../../partials/left %>
+    <div id="main">
+        <div class="container-fluid">
+            <div class="page-header">
+                <div class="pull-left">
+                    <h1>JOB</h1>
+                </div>
+                <div class="pull-right">
+                    <ul class="stats">
+                        <li class='satgreen'>
+                            <i class="fa fa-calendar"></i>
+                            <div class="details">
+                                <span class="big">February 22, 2013</span>
+                                <span>Wednesday, 13:56</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="breadcrumbs">
+                <!---->
+                <div class="close-bread">
+                    <a href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+
+
+                <div class="col-sm-12">
+                    <div class="box box-bordered box-color">
+                        <div class="box-title">
+                            <h3>
+                                <i class="fa fa-edit"></i>添加 任务</h3>
+                        </div>
+                        <div class="box-content nopadding">
+                            <form action="#" method="POST" class='form-horizontal form-bordered'>
+
+                                <div class="form-group">
+                                    <label for="jobName" class="control-label col-sm-3">Job Name : *</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="jobName" id="jobName" placeholder="job Name"
+                                               class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="connectString" class="control-label col-sm-3">Connect String : *</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="connectString" id="connectString"
+                                               placeholder="connect string" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3">Query String OR Table Name :
+                                        *</label>
+                                    <div class="col-sm-9">
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="radio" name="type" value="queryString" id="query"
+                                                   class='icheck-me'
+                                                   data-skin="square" data-color="blue">
+                                            <label class="inline" for="query">Query String.</label>
+                                        </div>
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="radio" name="type" value="tableName" id="table"
+                                                   class='icheck-me'
+                                                   data-skin="square" data-color="blue">
+                                            <label class="inline" for="table">Table Name.</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group hidden">
+                                    <label for="queryString" class="control-label col-sm-3">Query String : *</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="queryString" id="queryString"
+                                               placeholder="query string" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group hidden">
+                                    <label for="splitBy" class="control-label col-sm-3">Split By : *</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="splitBy" id="splitBy" placeholder="split by"
+                                               class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group hidden">
+                                    <label for="dataTable" class="control-label col-sm-3">Data Table : *</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="dataTable" id="dataTable" placeholder="table name"
+                                               class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="tableColumns" class="control-label col-sm-3">Table Columns :</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="tableColumns" id="tableColumns"
+                                               placeholder="columns name" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="where" class="control-label col-sm-3">Where :</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="where" id="where" placeholder="where condition"
+                                               class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userName" class="control-label col-sm-3">User Name : *</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="userName" id="userName" placeholder="user name"
+                                               class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="password" class="control-label col-sm-3">Password : *</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="password" id="password" placeholder="password"
+                                               class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3">Import Data To :
+                                        *</label>
+                                    <div class="col-sm-9">
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="radio" name="importType" value="hdfs" id="hdfs"
+                                                   class='icheck-me'
+                                                   data-skin="square" data-color="blue">
+                                            <label class="inline" for="hdfs">HDFS.</label>
+                                        </div>
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="radio" name="importType" value="hive" id="hive"
+                                                   class='icheck-me'
+                                                   data-skin="square" data-color="blue">
+                                            <label class="inline" for="hive">Hive.</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="dataTo" class="control-label col-sm-3">HDFS Path :</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="dataTo" id="dataTo" placeholder="hdfs dir path"
+                                               class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group hidden">
+                                    <label class="control-label col-sm-3">Import To Hive Table :
+                                        *</label>
+                                    <div class="col-sm-9">
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="checkbox" name="toHiveTable" value="toHiveTable"
+                                                   id="toHiveTable"
+                                                   class='icheck-me'
+                                                   data-skin="square" data-color="blue">
+                                            <label class="inline" for="toHiveTable">Table Exist.</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group hidden">
+                                    <label for="hiveTableName" class="control-label col-sm-3">Hive Table Name :
+                                        *</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="hiveTableName" id="hiveTableName"
+                                               placeholder="hive table name" class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3">File Type :</label>
+                                    <div class="col-sm-9">
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="radio" name="fileType" value="avro" id="avro"
+                                                   class='icheck-me'
+                                                   data-skin="square" data-color="blue">
+                                            <label class="inline" for="avro">Avrodatafile.</label>
+                                        </div>
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="radio" name="fileType" value="seq" id="seq"
+                                                   class='icheck-me'
+                                                   data-skin="square" data-color="blue">
+                                            <label class="inline" for="seq">Sequencefile.</label>
+                                        </div>
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="radio" name="fileType" value="text" id="text"
+                                                   class='icheck-me'
+                                                   data-skin="square" data-color="blue">
+                                            <label class="inline" for="text">Textfile.</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="fieldsTerminatedBy" class="control-label col-sm-3">Fields Terminated By
+                                        :</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="fieldsTerminatedBy" id="fieldsTerminatedBy"
+                                               placeholder="Fields Terminated By" class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group hidden">
+                                    <label class="control-label col-sm-3">File Append : </label>
+                                    <div class="col-sm-9">
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="checkbox" name="fileAppend" value="fileAppend" id="fileAppend"
+                                                   class='icheck-me'
+                                                   data-skin="square" data-color="blue">
+                                            <label class="inline" for="fileAppend">Append.</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group hidden">
+                                    <label class="control-label col-sm-3">Hive Overwrite : </label>
+                                    <div class="col-sm-9">
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="checkbox" name="overWrite" value="overWrite" id="overWrite"
+                                                   class='icheck-me'
+                                                   data-skin="square" data-color="blue">
+                                            <label class="inline" for="overWrite">Overwrite.</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="mapperNum" class="control-label col-sm-3">Mappers Number :</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="mapperNum" id="mapperNum" placeholder="mappers number"
+                                               class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-actions">
+                                    <button type="button" onclick="postSubmit()" class="btn btn-primary">Save changes
+                                    </button>
+                                    <!--<button type="button" class="btn">Cancel</button>-->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".main-nav > li:eq(2)").addClass("active");
+    });
+</script>
+</body>
+
+</html>

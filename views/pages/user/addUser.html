@@ -1,0 +1,141 @@
+<!doctype html>
+<html ng-app="app">
+
+<head>
+    <% include ../../partials/header %>
+    <script src="/js/customer/adduser.js"></script>
+</head>
+
+<body data-layout="fixed">
+
+<% include ../../partials/navbar %>
+
+<div class="container-fluid nav-hidden" id="content">
+    <% include ../../partials/left %>
+    <div id="main">
+        <div class="container-fluid">
+            <div class="page-header">
+                <div class="pull-left">
+                    <h1>USER</h1>
+                </div>
+                <div class="pull-right">
+                    <ul class="stats">
+                        <li class='satgreen'>
+                            <i class="fa fa-calendar"></i>
+                            <div class="details">
+                                <span class="big">February 22, 2013</span>
+                                <span>Wednesday, 13:56</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="breadcrumbs">
+                <div class="close-bread">
+                    <a href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+
+
+                <div class="col-sm-12">
+                    <div class="box box-bordered box-color">
+                        <div class="box-title">
+                            <h3>
+                                <i class="fa fa-edit"></i>新增 用户</h3>
+                        </div>
+                        <div class="box-content nopadding">
+                            <form action="#" method="POST" class='form-horizontal form-bordered'>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">System</label>
+                                    <div class="col-sm-10">
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="radio" name="level" value="system" id="system"
+                                                   class='icheck-me'
+                                                   data-skin="square" data-color="blue">
+                                            <label class="inline" for="system">System User.</label>
+                                        </div>
+                                        <div class="checkbox checkbox-inline">
+                                            <input type="radio" name="level" value="app" id="app" class='icheck-me'
+                                                   data-skin="square" data-color="blue">
+                                            <label class="inline" for="app">APP User.</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userName" class="control-label col-sm-2">User Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="userName" id="userName" placeholder="User Name"
+                                               class="form-control">
+                                        <!--<span class="help-block">This is just a supporting text</span>-->
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password" class="control-label col-sm-2">Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" name="password" placeholder="password"
+                                               class="form-control">
+                                        <!--<span class="help-block">This is just a supporting text</span>-->
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password2" class="control-label col-sm-2">Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" name="password2" placeholder="password"
+                                               class="form-control">
+                                        <!--<span class="help-block">This is just a supporting text</span>-->
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="s2" class="control-label col-sm-2">Placeholder</label>
+                                    <div class="col-sm-10">
+                                        <select name="s2" id="s2" class='select2-me' style="width:250px;"
+                                                data-placeholder="Please select something">
+                                            <option value=""></option>
+                                            <option value="01">Option-01</option>
+                                            <option value="02">Option-02</option>
+                                            <option value="03">Option-03</option>
+                                            <option value="04">Option-04</option>
+                                            <option value="05">Option-05</option>
+                                            <option value="06">Option-06</option>
+                                            <option value="07">Option-07</option>
+                                            <option value="08">Option-08</option>
+                                            <option value="09">Option-09</option>
+                                            <option value="10">Option-10</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="button" name="submit" class="btn btn-primary">Save changes</button>
+                                    <!--<button type="button" class="btn">Cancel</button>-->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".main-nav > li:eq(1)").addClass("active");
+//        $("#sys-alert").modal('hide');
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html ng-app="app">
+
+<head>
+    <% include ../../partials/header %>
+    <script src="/js/customer/addapi.js"></script>
+</head>
+
+<body data-layout="fixed">
+
+<% include ../../partials/navbar %>
+
+<div class="container-fluid nav-hidden" id="content">
+    <% include ../../partials/left %>
+    <div id="main">
+        <div class="container-fluid">
+            <div class="page-header">
+                <div class="pull-left">
+                    <h1>API</h1>
+                </div>
+                <div class="pull-right">
+                    <ul class="stats">
+                        <li class='satgreen'>
+                            <i class="fa fa-calendar"></i>
+                            <div class="details">
+                                <span class="big">February 22, 2013</span>
+                                <span>Wednesday, 13:56</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="breadcrumbs">
+                <!---->
+                <div class="close-bread">
+                    <a href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+
+
+                <div class="col-sm-12">
+                    <div class="box box-bordered box-color">
+                        <div class="box-title">
+                            <h3>
+                                <i class="fa fa-edit"></i>新增 API 接口</h3>
+                        </div>
+                        <div class="box-content">
+                            <form action="#" method="POST" class='form-horizontal'>
+                                <div class="form-group">
+                                    <label for="typeName" class="control-label col-sm-2">Type Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="typeName" placeholder="Type Name"
+                                               class="form-control">
+                                        <!--<span class="help-block">This is just a supporting text</span>-->
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="s2" class="control-label col-sm-2">Placeholder</label>
+                                    <div class="col-sm-10">
+                                        <select name="s2" id="s2" class='select2-me' style="width:250px;"
+                                                data-placeholder="Please select something">
+                                            <option value=""></option>
+                                            <option value="01">Option-01</option>
+                                            <option value="02">Option-02</option>
+                                            <option value="03">Option-03</option>
+                                            <option value="04">Option-04</option>
+                                            <option value="05">Option-05</option>
+                                            <option value="06">Option-06</option>
+                                            <option value="07">Option-07</option>
+                                            <option value="08">Option-08</option>
+                                            <option value="09">Option-09</option>
+                                            <option value="10">Option-10</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="referName" class="control-label col-sm-2">Refer Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="referName" placeholder="Refer Name"
+                                               class="form-control">
+                                        <!--<span class="help-block">Minimum length: 9, only numeric</span>-->
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="button" name="submit" class="btn btn-primary">Save changes
+                                    </button>
+                                    <button type="button" name="create" class="btn">Create Topic</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".main-nav > li:eq(3)").addClass("active");
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html ng-app="app">
+
+<head>
+    <% include ../partials/header %>
+
+</head>
+
+<body class='login'>
+<div class="wrapper">
+    <h1>
+        <a href="index.html">
+            <img src="img/logo-big.png" alt="" class='retina-ready' width="59" height="49">BDH</a>
+    </h1>
+    <div class="login-body">
+        <h2>SIGN IN</h2>
+        <form>
+            <div class="form-group">
+                <div class="email controls">
+                    <input type="text" name='uemail' placeholder="Email address" class='form-control'
+                           data-rule-required="true">
+                    <!--<div id="myAlert" class="alert alert-success">-->
+                    <!--<a href="#" class="close" data-dismiss="alert">&times;</a>-->
+                    <!--<strong>成功！</strong>结果是成功的。-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="pw controls">
+                    <input type="password" name="upw" placeholder="Password" class='form-control'
+                           data-rule-required="true">
+                </div>
+            </div>
+            <!--<div id="myAlert" class="alert alert-danger" role="alert">-->
+            <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
+            <!--<span class="fa fa-exclamation-triangle" aria-hidden="true"></span>-->
+            <!--<span class="sr-only">Error:</span>-->
+            <!--<span id="error"><%= error %> 错误</span>-->
+            <!--</div>-->
+            <div class="submit">
+                <div class="remember">
+                    <input type="checkbox" name="remember" disabled class='icheck-me' data-skin="square"
+                           data-color="blue"
+                           id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <input type="button" name="submit" value="Sign me in" class='btn btn-primary'>
+            </div>
+        </form>
+        <div disabled class="forget">
+            <a href="#">
+                <span>Forgot password?</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(document).keypress(function (e) {
+            if (e.which == 13) {
+                login();
+            }
+        });
+
+        $("input[name='submit']").on('click', function () {
+            login();
+        });
+    });
+
+    function login() {
+        var username = $("input[name='uemail']").val();
+        var pwd = $("input[name='upw']").val();
+
+        if (!(username.length > 0)) {
+            alert("用户名错误！")
+            return;
+        }
+
+        if (!(pwd.length > 0)) {
+            alert("密码错误！")
+            return;
+        }
+
+        var data = {
+            "username": username,
+            "password": pwd
+        };
+        $.ajax({
+            url: '/login',
+            type: 'POST',
+            data: data,
+            success: function (data, status) {
+                console.log(data);
+                console.log(status);
+                location.href = '/';
+                return;
+            },
+            error: function (data, e) {
+                console.log(data);
+                console.log(e);
+                if (data.status == 400) {
+                    bootbox.alert({
+                        message: " UserName OR password error !",
+                        size: 'small'
+                    });
+                } else if (data.status == 500) {
+                    bootbox.alert({
+                        message: "service error ! Please try again!",
+                        size: 'small'
+                    });
+                }
+
+                return;
+            }
+        });
+    }
+
+</script>
+</body>
+
+</html>

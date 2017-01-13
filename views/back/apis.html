@@ -1,0 +1,138 @@
+<!doctype html>
+<html ng-app="app">
+
+<head>
+    <% include ../../partials/header %>
+    <script src="/js/customer/apis.js"></script>
+</head>
+
+<body>
+
+<% include ../../partials/navbar %>
+
+<div class="container-fluid" id="content">
+    <% include ../../partials/left %>
+    <div id="main">
+        <div class="container-fluid">
+            <div class="page-header">
+                <div class="pull-left">
+                    <h1>API</h1>
+                </div>
+                <div class="pull-right">
+                    <!--<ul class="minitiles">-->
+                    <!--<li class='grey'>-->
+                    <!--<a href="#">-->
+                    <!--<i class="fa fa-cogs"></i>-->
+                    <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class='lightgrey'>-->
+                    <!--<a href="#">-->
+                    <!--<i class="fa fa-globe"></i>-->
+                    <!--</a>-->
+                    <!--</li>-->
+                    <!--</ul>-->
+                    <ul class="stats">
+                        <!--<li class='lightred'>-->
+                        <!--<i class="fa fa-money"></i>-->
+                        <!--<div class="details">-->
+                        <!--<span class="big">$324,12</span>-->
+                        <!--<span>Balance</span>-->
+                        <!--</div>-->
+                        <!--</li>-->
+                        <li class='satgreen'>
+                            <i class="fa fa-calendar"></i>
+                            <div class="details">
+                                <span class="big">February 22, 2013</span>
+                                <span>Wednesday, 13:56</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="breadcrumbs">
+                <ul>
+                    <li>
+                        <a href="more-login.html">Home</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="index.ejs">Dashboard</a>
+                    </li>
+                </ul>
+                <div class="close-bread">
+                    <a href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row" ng-controller="getItems">
+
+                <div class="col-sm-12">
+                    <div class="box box-color box-bordered">
+                        <div class="box-title">
+                            <h3>
+                                <i class="fa fa-table"></i>
+                                API列表
+                            </h3>
+                        </div>
+                        <div class="box-content nopadding">
+                            <table class="table table-hover table-nomargin">
+                                <thead>
+                                <tr>
+                                    <!--<th>Rendering engine</th>-->
+                                    <!--<th>Browser</th>-->
+                                    <th class='hidden-350'>ID</th>
+                                    <th class='hidden-1024'>Type</th>
+                                    <th class='hidden-480'>Refer</th>
+                                    <th class='hidden-480'>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="item in items | filter:query">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.bigType}}</td>
+                                    <td>{{item.smallTypes}}</td>
+                                    <td></td>
+                                </tr>
+                                <!--<tr>-->
+                                    <!--<td>Trident</td>-->
+                                    <!--<td>-->
+                                        <!--Internet Explorer 4.0-->
+                                    <!--</td>-->
+                                    <!--<td class='hidden-350'>Win 95+</td>-->
+                                    <!--<td class='hidden-1024'>4</td>-->
+                                    <!--<td class='hidden-480'>X</td>-->
+                                <!--</tr>-->
+
+                                </tbody>
+                            </table>
+                            <!--<div class="table-pagination">-->
+                                <!--<a href="#" class='disabled'>First</a>-->
+                                <!--<a href="#" class='disabled'>Previous</a>-->
+                                <!--<span>-->
+										<!--<a href="#" class='active'>1</a>-->
+										<!--<a href="#">2</a>-->
+										<!--<a href="#">3</a>-->
+									<!--</span>-->
+                                <!--<a href="#">Next</a>-->
+                                <!--<a href="#">Last</a>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+
+
+            </div><!-- row end  -->
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".main-nav > li:eq(3)").addClass("active");
+    });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+
+
+
+<div id="navigation" ng-controller="navBar">
+    <div class="container-fluid">
+        <a href="/" id="brand">BDH</a>
+        <!--<a href="/" class="toggle-nav" rel="tooltip" data-placement="bottom" title="Toggle navigation">-->
+            <!--<i class="fa fa-bars"></i>-->
+        <!--</a>-->
+        <ul class='main-nav'>
+            <li>
+                <a href="/">
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-toggle="dropdown" class='dropdown-toggle'>
+                    <span>User</span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/user/">Users List</a>
+                    </li>
+                    <li>
+                        <a href="/user/add">Add User</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#" data-toggle="dropdown" class='dropdown-toggle'>
+                    <span>Job</span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/job/">Jobs List</a>
+                    </li>
+                    <li>
+                        <a href="/job/add">Add Job</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#" data-toggle="dropdown" class='dropdown-toggle'>
+                    <span>Api</span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/api/">Apis List</a>
+                    </li>
+                    <li>
+                        <a href="/api/add">Add Api</a>
+                    </li>
+                </ul>
+            </li>
+
+            <!--<li>-->
+                <!--<a href="/about">-->
+                    <!--<span>about</span>-->
+                <!--</a>-->
+            <!--</li>-->
+
+        </ul>
+        <div class="user">
+            <ul class="icon-nav">
+                <li class='dropdown colo'>
+                    <a href="#" class='dropdown-toggle' data-toggle="dropdown">
+                        <i class="fa fa-tint"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-right theme-colors">
+                        <li class="subtitle">
+                            Predefined colors
+                        </li>
+                        <li>
+                            <span class='red'></span>
+                            <span class='orange'></span>
+                            <span class='green'></span>
+                            <span class="brown"></span>
+                            <span class="blue"></span>
+                            <span class='lime'></span>
+                            <span class="teal"></span>
+                            <span class="purple"></span>
+                            <span class="pink"></span>
+                            <span class="magenta"></span>
+                            <span class="grey"></span>
+                            <span class="darkblue"></span>
+                            <span class="lightred"></span>
+                            <span class="lightgrey"></span>
+                            <span class="satblue"></span>
+                            <span class="satgreen"></span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="dropdown">
+                <a href="#" class='dropdown-toggle' data-toggle="dropdown">{{ user }}
+                    <img src="/img/demo/user-avatar.jpg" alt="">
+                </a>
+                <ul class="dropdown-menu pull-right">
+                    <!--<li>-->
+                        <!--<a href="more-userprofile.html">Edit profile</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="#">Account settings</a>-->
+                    <!--</li>-->
+                    <li>
+                        <a href="/logout">Sign out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
